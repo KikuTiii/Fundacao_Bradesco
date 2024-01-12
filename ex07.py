@@ -1,11 +1,19 @@
-# Múltipla Herança:
-# Crie uma classe Trabalhador que tenha um atributo cargo. Em seguida, crie uma classe Funcionario que herda tanto de Estudante quanto de Trabalhador.
+# Métodos Estáticos:
+
+# Adicione um método estático à classe Pessoa chamado verificar_idade_adulta, que retorna True se a pessoa tiver 18 anos ou mais, e False caso contrário.
+
 
 class Pessoa:
     def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
-        
+
+    @staticmethod
+    def verificar_idade_adulta(idade):
+        if idade >= 18:
+            print("É adulto e esta apto a trabalhar")
+        else:
+            print("Não é adulto e nao esta apto a trabalhar")
 
     def cumprimentar(self):
         print(f"Olá, meu nome é {self.nome}")
@@ -37,4 +45,4 @@ funcionario = Funcionario("Kikuti", 19, "Engenharia de software", "Software engi
 funcionario.cumprimentar()  # Método da classe Pessoa
 funcionario.estudar()      # Método da classe Estudante
 funcionario.trabalhar()    # Método da classe Trabalhador
-
+funcionario.verificar_idade_adulta(19)
